@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Profile Redirect</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center; /* Center the content */
+            justify-content: center; /* Center the content vertically */
+            font-family: Arial, sans-serif; /* Font style */
+            position: relative; /* Position for overlay */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Background Image */
+        .background {
+            background-image: url('beach.jpg'); /* Updated image filename */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            width: 100%;
+            height: 100%;
+            position: absolute; /* Position it behind the overlay */
+            z-index: 1; /* Send it to the back */
+        }
+
+        /* Purple Overlay */
+        .overlay {
+            background-color: rgba(128, 0, 128, 0.5); /* Semi-transparent purple */
+            width: 100%;
+            height: 100%;
+            position: absolute; /* Position it above the background */
+            z-index: 2; /* Bring it in front */
+        }
+
+        /* Content */
+        .content {
+            position: relative; /* Position for text */
+            z-index: 3; /* Bring it above everything */
+            color: white; /* Change text color for better contrast */
+            text-align: center; /* Center the text */
+            padding: 20px; /* Add some padding */
+            background: rgba(0, 0, 0, 0.5); /* Slightly dark background for readability */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        h1 {
+            margin: 0; /* Remove default margin */
+        }
+
+        label {
+            font-size: 18px; /* Font size for label */
+        }
+
+        input {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border: none; /* Remove border */
+            border-radius: 4px; /* Rounded corners */
+            outline: none; /* Remove outline */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #FF5733; /* Button color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 4px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover */
+        }
+
+        button:hover {
+            background-color: #C70039; /* Darker shade on hover */
+        }
+    </style>
+    <script>
+        function redirectToProfile() {
+            var username = document.getElementById("username").value;
+            if (username) {
+                window.location.href = "https://www.roblox.com/users/profile?username=" + username;
+            } else {
+                alert("Please enter a username.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Roblox Profile Redirect</h1>
+        <label for="username">Enter Roblox Username:</label>
+        <input type="text" id="username" placeholder="Your Roblox username">
+        <button onclick="redirectToProfile()">Go to Profile</button>
+    </div>
+</body>
+</html>
+
